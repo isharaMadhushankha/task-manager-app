@@ -2,6 +2,8 @@
 
 A full-stack, responsive Task Management application built for the **Koncepthive Technical Assessment**. Featuring user authentication, dashboard analytics with interactive data visualizations (Recharts), task CRUD operations, real-time title search, status & priority filtering, sorting, and mobile responsiveness.
 
+Recently updated with a meticulous **Apple Design System** integration, emphasizing a photography-first aesthetic, negative tracking typography, frosted glass sub-navigation, and a comprehensive light/dark mode toggle.
+
 ---
 
 ## 🌐 Live Production Links & Credentials
@@ -22,19 +24,23 @@ A full-stack, responsive Task Management application built for the **Koncepthive
 
 ## ✨ Features & Highlights
 
+- **🍎 Apple Design System Integration**:
+  - Implementation of Apple's signature clean, low-density layout.
+  - Strict adherence to SF Pro system fonts with negative tracking.
+  - Custom CSS properties defining a robust color and sizing system (`apple-canvas`, `apple-divider`, `apple-pill`, `apple-primary`).
+  - Frosted glass effects via `backdrop-filter` for sticky headers.
+- **🌗 Light/Dark Mode Switch**: Smooth theme toggling persisted via `localStorage`, transforming the app seamlessly between crisp light and dark slate.
 - **🔐 User Authentication**: Secure login using JWT (JSON Web Tokens) and `bcryptjs` password hashing with protected route guards.
 - **📊 Analytics & Visualizations**: Interactive Recharts components:
   - **Task Status Donut Chart**: Distribution across Pending, In Progress, Completed, and Overdue statuses.
   - **Priority Bar Chart**: Breakdown across Low, Medium, and High task priorities.
   - **Show/Hide Analytics Toggle**: Sleek button to toggle chart visibility on demand.
-- **⚡ Overview Statistics Cards**: 5 metric cards (Total, Pending, In Progress, Completed, Overdue) with left gradient glows, glowing box shadows, and responsive single-row layout (`grid-cols-5`).
+- **⚡ Overview Statistics Cards**: 5 metric cards (Total, Pending, In Progress, Completed, Overdue).
 - **📝 Complete Task Management (CRUD)**: Create, Read, Update, and Delete tasks with custom confirmation modals and toast notifications.
 - **🔍 Search, Filter & Sort**:
   - Live title search bar.
   - Dropdown filters for Status and Priority.
   - Sorting by Newest Created, Oldest Created, and Due Date.
-- **📅 Modern Task Modal (`TaskModal.jsx`)**: Glassmorphism container, dark mode native date picker with custom calendar icon, interactive focus rings, and glowing gradient action buttons.
-- **🎨 Premium Dark Slate Aesthetic**: Custom styling matching a cohesive dark slate palette (`slate-950` background, glassmorphism `backdrop-blur-xl`, ambient glow effects).
 
 ---
 
@@ -68,7 +74,8 @@ task-manager-app/
 │   │   ├── context/     # AuthContext state manager & user session persistence
 │   │   ├── services/    # Axios instance & token interceptors
 │   │   ├── App.jsx      # Auth guard & toaster wrapper
-│   │   └── index.css    # Tailwind CSS rules & dark mode styling
+│   │   └── index.css    # Tailwind CSS rules & Apple theme styling
+│   ├── tailwind.config.js # Apple design tokens mapped to Tailwind
 │   ├── vercel.json      # Standalone Vercel deployment config for frontend
 │   ├── package.json
 │   └── vite.config.js
@@ -162,10 +169,11 @@ npm run dev
 
 ## 💡 Key Design & Business Decisions
 
-1. **User Scope & Data Isolation**: Tasks are associated with `user_id` foreign keys to ensure data isolation.
-2. **Dynamic Overdue Calculation**: Tasks are evaluated as overdue dynamically when `due_date < CURRENT_DATE` and `status != 'Completed'`.
-3. **Date Validation**: Due dates cannot be set prior to today's date during creation or editing.
-4. **Vercel IPv4 Pooler Integration**: The backend automatically routes database queries through Supabase's IPv4 connection pooler to ensure zero network latency and 100% serverless connection uptime.
+1. **Apple Design Language**: The UI was updated to rigorously match Apple's modern web aesthetic. This ensures high visual quality while keeping information density balanced and interactions smooth.
+2. **User Scope & Data Isolation**: Tasks are associated with `user_id` foreign keys to ensure data isolation.
+3. **Dynamic Overdue Calculation**: Tasks are evaluated as overdue dynamically when `due_date < CURRENT_DATE` and `status != 'Completed'`.
+4. **Date Validation**: Due dates cannot be set prior to today's date during creation or editing.
+5. **Vercel IPv4 Pooler Integration**: The backend automatically routes database queries through Supabase's IPv4 connection pooler to ensure zero network latency and 100% serverless connection uptime.
 
 ---
 

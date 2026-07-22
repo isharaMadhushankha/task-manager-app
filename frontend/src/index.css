@@ -1,1 +1,375 @@
 @import "tailwindcss";
+
+@theme {
+  --color-mongo-brand-green: var(--color-mongo-brand-green);
+  --color-mongo-brand-green-dark: var(--color-mongo-brand-green-dark);
+  --color-mongo-brand-green-mid: var(--color-mongo-brand-green-mid);
+  --color-mongo-brand-green-soft: var(--color-mongo-brand-green-soft);
+  --color-mongo-brand-teal-deep: var(--color-mongo-brand-teal-deep);
+  --color-mongo-brand-teal: var(--color-mongo-brand-teal);
+  --color-mongo-brand-teal-mid: var(--color-mongo-brand-teal-mid);
+
+  --color-mongo-accent-purple: var(--color-mongo-accent-purple);
+  --color-mongo-accent-orange: var(--color-mongo-accent-orange);
+  --color-mongo-accent-pink: var(--color-mongo-accent-pink);
+  --color-mongo-accent-blue: var(--color-mongo-accent-blue);
+
+  --color-mongo-canvas: var(--color-mongo-canvas);
+  --color-mongo-canvas-dark: var(--color-mongo-canvas-dark);
+  --color-mongo-surface: var(--color-mongo-surface);
+  --color-mongo-surface-soft: var(--color-mongo-surface-soft);
+  --color-mongo-surface-feature: var(--color-mongo-surface-feature);
+
+  --color-mongo-hairline: var(--color-mongo-hairline);
+  --color-mongo-hairline-soft: var(--color-mongo-hairline-soft);
+  --color-mongo-hairline-strong: var(--color-mongo-hairline-strong);
+  --color-mongo-hairline-dark: var(--color-mongo-hairline-dark);
+
+  --color-mongo-ink: var(--color-mongo-ink);
+  --color-mongo-charcoal: var(--color-mongo-charcoal);
+  --color-mongo-slate: var(--color-mongo-slate);
+  --color-mongo-steel: var(--color-mongo-steel);
+  --color-mongo-stone: var(--color-mongo-stone);
+  --color-mongo-muted: var(--color-mongo-muted);
+  --color-mongo-on-dark: var(--color-mongo-on-dark);
+  --color-mongo-on-dark-muted: var(--color-mongo-on-dark-muted);
+
+  --font-mongo: "Euclid Circular A", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mongo-code: "Source Code Pro", "SF Mono", Menlo, Consolas, monospace;
+}
+
+:root {
+  /* Brand */
+  --color-mongo-brand-green: #00ED64;
+  --color-mongo-brand-green-dark: #00684A;
+  --color-mongo-brand-green-mid: #00B359;
+  --color-mongo-brand-green-soft: #E3FCF7;
+  
+  --color-mongo-brand-teal-deep: #001E2B;
+  --color-mongo-brand-teal: #006D77;
+  --color-mongo-brand-teal-mid: #003B55;
+  
+  /* Course Category Accents */
+  --color-mongo-accent-purple: #7014AA;
+  --color-mongo-accent-orange: #ED6100;
+  --color-mongo-accent-pink: #E61763;
+  --color-mongo-accent-blue: #006DCA;
+  
+  /* Surfaces */
+  --color-mongo-canvas: #FFFFFF;
+  --color-mongo-canvas-dark: #112733;
+  --color-mongo-surface: #F9FBFA;
+  --color-mongo-surface-soft: #F5F7F6;
+  --color-mongo-surface-feature: #F1FDF9; /* Pale mint featured tier bg */
+
+  /* Borders / Hairlines */
+  --color-mongo-hairline: #E8EDEB;
+  --color-mongo-hairline-soft: #F3F5F4;
+  --color-mongo-hairline-strong: #C1C7C6;
+  --color-mongo-hairline-dark: #203A46;
+  
+  /* Text */
+  --color-mongo-ink: #001E2B;
+  --color-mongo-charcoal: #3D4F58;
+  --color-mongo-slate: #5C6C75;
+  --color-mongo-steel: #8699A3;
+  --color-mongo-stone: #B8C4C2;
+  --color-mongo-muted: #D1D9D8;
+  --color-mongo-on-dark: #FFFFFF;
+  --color-mongo-on-dark-muted: #889C9A;
+  
+  /* Semantic */
+  --color-mongo-semantic-warning-bg: #FFF3C4;
+  --color-mongo-semantic-warning-text: #946900;
+
+  /* Shadows */
+  --shadow-mongo-level-1: 0px 1px 2px 0px rgba(0, 30, 43, 0.04);
+  --shadow-mongo-level-2: 0px 4px 12px 0px rgba(0, 30, 43, 0.08);
+  --shadow-mongo-level-3: 0px 12px 24px -4px rgba(0, 30, 43, 0.12);
+  --shadow-mongo-level-4: 0px 16px 48px -8px rgba(0, 30, 43, 0.16);
+}
+
+/* Base Body Styles */
+body {
+  font-family: var(--font-mongo);
+  font-size: 16px;
+  line-height: 1.55;
+  background-color: var(--color-mongo-canvas);
+  color: var(--color-mongo-ink);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Utility Classes */
+.mongo-hero-display {
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1.10;
+  letter-spacing: -1.5px;
+}
+
+.mongo-display-lg {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.mongo-heading-1 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.20;
+  letter-spacing: -0.5px;
+}
+
+.mongo-heading-2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.mongo-heading-3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.30;
+  letter-spacing: 0;
+}
+
+.mongo-heading-4 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.mongo-heading-5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.40;
+  letter-spacing: 0;
+}
+
+.mongo-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0;
+}
+
+.mongo-body-md {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+
+.mongo-body-sm {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0;
+}
+
+.mongo-body-sm-medium {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.50;
+  letter-spacing: 0;
+}
+
+.mongo-caption-bold {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.40;
+  letter-spacing: 0;
+}
+
+.mongo-micro-uppercase {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.40;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.mongo-button-md {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.30;
+  letter-spacing: 0;
+}
+
+/* Button Pressed States */
+.mongo-btn-primary:active {
+  background-color: var(--color-mongo-brand-green-mid);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-mongo-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-mongo-hairline-strong);
+  border-radius: 9999px;
+}
+
+/* Light Mode specific overview overrides */
+.overview-container {
+  background-color: var(--color-mongo-canvas);
+  color: var(--color-mongo-ink);
+}
+
+.overview-stat-card {
+  background-color: rgba(20, 24, 33, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.overview-chart-card {
+  background-color: var(--color-mongo-canvas);
+  border: 1px solid var(--color-mongo-hairline-strong);
+}
+
+/* Date picker reset */
+[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+[data-theme="dark"] [type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+[data-theme="dark"] {
+  --color-mongo-canvas: #001E2B;
+  --color-mongo-canvas-dark: #112733;
+  --color-mongo-surface: #00121A;
+  --color-mongo-surface-soft: #002B3D;
+  --color-mongo-surface-feature: #003B55;
+
+  --color-mongo-hairline: #003B55;
+  --color-mongo-hairline-soft: #002B3D;
+  --color-mongo-hairline-strong: #004D6B;
+  --color-mongo-hairline-dark: #112733;
+  
+  --color-mongo-ink: #FFFFFF;
+  --color-mongo-charcoal: #D1D9D8;
+  --color-mongo-slate: #8699A3;
+  --color-mongo-steel: #8699A3;
+  --color-mongo-stone: #5C6C75;
+
+  --shadow-mongo-level-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  --shadow-mongo-level-2: 0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+  --shadow-mongo-level-3: 0px 12px 24px -4px rgba(0, 0, 0, 0.6);
+  --shadow-mongo-level-4: 0px 16px 48px -8px rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .overview-container {
+  background-color: var(--color-mongo-brand-teal-deep);
+  color: var(--color-mongo-on-dark);
+}
+
+[data-theme="dark"] .overview-stat-card {
+  background-color: var(--color-mongo-canvas-dark);
+  border-color: var(--color-mongo-hairline-dark);
+}
+
+[data-theme="dark"] .overview-chart-card {
+  background-color: var(--color-mongo-canvas-dark);
+  border-color: var(--color-mongo-hairline-dark);
+}
+
+/* Mobile Tasks Toolbar & Overview (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Toolbar from previous request */
+  .tasks-toolbar-container {
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    gap: 12px 0 !important;
+  }
+  .tasks-controls-container {
+    display: contents !important;
+  }
+  .tasks-title {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+  }
+  .create-task-btn {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto !important;
+  }
+  .search-container {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100% !important;
+  }
+  .search-container input {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  .filters-container {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex !important;
+    gap: 8px !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+  }
+  .filters-container > select {
+    flex: 1;
+    min-width: 0;
+    padding-left: 8px !important;
+    padding-right: 24px !important;
+    font-size: 13px !important;
+  }
+
+  /* Header & Overview styling for this request */
+  .mobile-header {
+    flex-direction: row !important;
+    gap: 8px !important;
+  }
+  .mobile-header-actions {
+    gap: 12px !important;
+  }
+  .mobile-overview-header h2 {
+    font-size: 1.25rem !important;
+  }
+  .mobile-stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+  .mobile-stat-card {
+    padding: 6px 4px !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+  .mobile-stat-card > div:first-child {
+    justify-content: center !important;
+    margin-bottom: 4px !important;
+  }
+  .mobile-stat-card .mongo-caption-bold {
+    font-size: 10px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    width: 100%;
+  }
+  .mobile-stat-card .mongo-heading-3 {
+    font-size: 16px !important;
+    text-align: center;
+    width: 100%;
+  }
+  .mobile-stat-card svg {
+    display: none !important;
+  }
+}
