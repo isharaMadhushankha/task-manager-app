@@ -3,6 +3,18 @@ import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import toast from 'react-hot-toast';
 import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Tooltip,
+  Legend,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+} from 'recharts';
+import {
   CheckSquare,
   LogOut,
   Plus,
@@ -19,6 +31,10 @@ import {
   X,
   Loader2,
   AlertTriangle,
+  PieChart as PieChartIcon,
+  BarChart3,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -28,6 +44,9 @@ const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
   const [stats, setStats] = useState({ total: 0, pending: 0, inProgress: 0, completed: 0, overdue: 0 });
   const [loading, setLoading] = useState(true);
+
+  // Analytics Toggle State
+  const [showCharts, setShowCharts] = useState(true);
 
   // Filters & Sorting
   const [search, setSearch] = useState('');
@@ -218,6 +237,30 @@ const Dashboard = () => {
     return due < today;
   };
 
+  // Data for Charts
+  const statusChartData = [
+    { name: 'Pending', value: stats.pending, color: '#f59e0b' },
+    { name: 'In Progress', value: stats.inProgress, color: '#3b82f6' },
+    { name: 'Completed', value: stats.completed, color: '#10b981' },
+    { name: 'Overdue', value: stats.overdue, color: '#ef4444' },
+  ];
+
+  const priorityCounts = tasks.reduce(
+    (acc, task) => {
+      if (task.priority === 'Low') acc.Low += 1;
+      else if (task.priority === 'Medium') acc.Medium += 1;
+      else if (task.priority === 'High') acc.High += 1;
+      return acc;
+    },
+    { Low: 0, Medium: 0, High: 0 }
+  );
+
+  const priorityChartData = [
+    { priority: 'Low', count: priorityCounts.Low },
+    { priority: 'Medium', count: priorityCounts.Medium },
+    { priority: 'High', count: priorityCounts.High },
+  ];
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 pb-12">
       {/* ── Navbar ───────────────────────────────────────────────────────────── */}
@@ -251,62 +294,159 @@ const Dashboard = () => {
       {/* ── Main Container ─────────────────────────────────────────────────── */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
         {/* ── Dashboard Metric Cards ───────────────────────────────────────── */}
-        <section className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {/* Total */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Total Tasks</span>
-              <ListTodo className="w-5 h-5 text-indigo-400" />
-            </div>
-            <div className="mt-3">
-              <span className="text-3xl font-extrabold text-white">{stats.total}</span>
-            </div>
+        <section className="space-y-4">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+              Overview Statistics
+            </h2>
+            {/* Show/Hide Analytics Toggle Button */}
+            <button
+              onClick={() => setShowCharts(!showCharts)}
+              className="flex items-center gap-2 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 px-3 py-1.5 rounded-xl transition-all cursor-pointer"
+            >
+              {showCharts ? (
+                <>
+                  <EyeOff className="w-3.5 h-3.5 text-slate-400" />
+                  <span>Hide Analytics</span>
+                </>
+              ) : (
+                <>
+                  <Eye className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Show Analytics</span>
+                </>
+              )}
+            </button>
           </div>
 
-          {/* Pending */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Pending</span>
-              <Clock className="w-5 h-5 text-amber-400" />
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {/* Total */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between text-slate-400">
+                <span className="text-xs font-semibold uppercase tracking-wider">Total Tasks</span>
+                <ListTodo className="w-5 h-5 text-indigo-400" />
+              </div>
+              <div className="mt-3">
+                <span className="text-3xl font-extrabold text-white">{stats.total}</span>
+              </div>
             </div>
-            <div className="mt-3">
-              <span className="text-3xl font-extrabold text-amber-400">{stats.pending}</span>
-            </div>
-          </div>
 
-          {/* In Progress */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">In Progress</span>
-              <Loader2 className="w-5 h-5 text-blue-400" />
+            {/* Pending */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between text-slate-400">
+                <span className="text-xs font-semibold uppercase tracking-wider">Pending</span>
+                <Clock className="w-5 h-5 text-amber-400" />
+              </div>
+              <div className="mt-3">
+                <span className="text-3xl font-extrabold text-amber-400">{stats.pending}</span>
+              </div>
             </div>
-            <div className="mt-3">
-              <span className="text-3xl font-extrabold text-blue-400">{stats.inProgress}</span>
-            </div>
-          </div>
 
-          {/* Completed */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Completed</span>
-              <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            {/* In Progress */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between text-slate-400">
+                <span className="text-xs font-semibold uppercase tracking-wider">In Progress</span>
+                <Loader2 className="w-5 h-5 text-blue-400" />
+              </div>
+              <div className="mt-3">
+                <span className="text-3xl font-extrabold text-blue-400">{stats.inProgress}</span>
+              </div>
             </div>
-            <div className="mt-3">
-              <span className="text-3xl font-extrabold text-emerald-400">{stats.completed}</span>
-            </div>
-          </div>
 
-          {/* Overdue */}
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all col-span-2 md:col-span-1">
-            <div className="flex items-center justify-between text-slate-400">
-              <span className="text-xs font-semibold uppercase tracking-wider">Overdue</span>
-              <AlertTriangle className="w-5 h-5 text-rose-400" />
+            {/* Completed */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+              <div className="flex items-center justify-between text-slate-400">
+                <span className="text-xs font-semibold uppercase tracking-wider">Completed</span>
+                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+              </div>
+              <div className="mt-3">
+                <span className="text-3xl font-extrabold text-emerald-400">{stats.completed}</span>
+              </div>
             </div>
-            <div className="mt-3">
-              <span className="text-3xl font-extrabold text-rose-400">{stats.overdue}</span>
+
+            {/* Overdue */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all col-span-2 md:col-span-1">
+              <div className="flex items-center justify-between text-slate-400">
+                <span className="text-xs font-semibold uppercase tracking-wider">Overdue</span>
+                <AlertTriangle className="w-5 h-5 text-rose-400" />
+              </div>
+              <div className="mt-3">
+                <span className="text-3xl font-extrabold text-rose-400">{stats.overdue}</span>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* ── Interactive Charts Section (Conditionally Rendered) ─────────────── */}
+        {showCharts && (
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-300">
+            {/* Donut Chart: Task Status Breakdown */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <PieChartIcon className="w-5 h-5 text-indigo-400" />
+                <h2 className="font-bold text-base text-white">Task Status Breakdown</h2>
+              </div>
+              <div className="w-full h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={statusChartData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={60}
+                      outerRadius={85}
+                      paddingAngle={4}
+                      dataKey="value"
+                    >
+                      {statusChartData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} stroke="#0f172a" strokeWidth={2} />
+                      ))}
+                    </Pie>
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: '#1e293b',
+                        borderColor: '#475569',
+                        borderRadius: '12px',
+                        color: '#ffffff',
+                      }}
+                      itemStyle={{ color: '#ffffff' }}
+                    />
+                    <Legend
+                      verticalAlign="bottom"
+                      height={36}
+                      formatter={(value) => <span className="text-xs text-slate-300 font-medium">{value}</span>}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Bar Chart: Priority Distribution */}
+            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <BarChart3 className="w-5 h-5 text-indigo-400" />
+                <h2 className="font-bold text-base text-white">Priority Distribution</h2>
+              </div>
+              <div className="w-full h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={priorityChartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <XAxis dataKey="priority" stroke="#64748b" tick={{ fill: '#94a3b8', fontSize: 12 }} />
+                    <YAxis stroke="#64748b" tick={{ fill: '#94a3b8', fontSize: 12 }} allowDecimals={false} />
+                    <Tooltip
+                      contentStyle={{
+                        backgroundColor: '#1e293b',
+                        borderColor: '#475569',
+                        borderRadius: '12px',
+                        color: '#ffffff',
+                      }}
+                      itemStyle={{ color: '#ffffff' }}
+                    />
+                    <Bar dataKey="count" fill="#6366f1" radius={[8, 8, 0, 0]} barSize={40} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── Controls Bar: Search, Filter, Sort, Add Task ─────────────────── */}
         <section className="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-4">
