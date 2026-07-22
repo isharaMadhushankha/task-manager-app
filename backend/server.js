@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const pool = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const taskRoutes = require('./routes/taskRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,12 +18,13 @@ pool.query('SELECT NOW()', (err, res) => {
   if (err) {
     console.error('❌ Database health check failed:', err.message);
   } else {
-    console.log('🗄️  Database time:', res.rows[0].now);
+    console.log('🗄️  Database connected! Current DB time:', res.rows[0].now);
   }
 });
 
 // ─── Routes ────────────────────────────────────────────────────────────────────
 app.use('/api/auth', authRoutes);
+app.use('/api/tasks', taskRoutes);
 
 // ─── Root Health Check ─────────────────────────────────────────────────────────
 app.get('/', (req, res) => {
