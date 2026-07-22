@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const pool = require('../config/db');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'super_secret_jwt_key_2026';
+
 /**
  * POST /api/auth/login
  * Authenticates a user by email and password.
@@ -42,7 +44,7 @@ const login = async (req, res) => {
         email: user.email,
         role: user.role || 'user',
       },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       { expiresIn: '24h' }
     );
 
@@ -59,7 +61,7 @@ const login = async (req, res) => {
     });
   } catch (err) {
     console.error('Login error:', err.message);
-    return res.status(500).json({ error: 'Internal server error.' });
+    return res.status(500).json({ error: err.message || 'Internal server error.' });
   }
 };
 

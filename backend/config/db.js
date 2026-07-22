@@ -1,9 +1,13 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
-// Create a connection pool using the DATABASE_URL from .env
+const connectionString =
+  process.env.DATABASE_URL ||
+  'postgresql://postgres:WuJ037hazfXJSvcj@db.ektqllxwrrnxqdhtuywj.supabase.co:5432/postgres';
+
+// Create a connection pool using the DATABASE_URL
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString,
   ssl: {
     rejectUnauthorized: false, // Required for Supabase / hosted PostgreSQL
   },
