@@ -1,182 +1,214 @@
-# 🚀 Task Management System — Technical Assessment
+🚀 Task Management System
 
-A full-stack, responsive Task Management application built for the **Koncepthive Technical Assessment**. Featuring user authentication, dashboard analytics with interactive data visualizations (Recharts), task CRUD operations, real-time title search, status & priority filtering, sorting, and mobile responsiveness.
+A modern Full-Stack Task Management Application built for the Koncepthive Technical Assessment. This application enables users to securely manage their daily tasks through a clean, responsive, and Apple-inspired user interface. It includes authentication, analytics, task management, filtering, search, sorting, and a seamless Light/Dark mode experience.
 
-Recently updated with a meticulous **Apple Design System** integration, emphasizing a photography-first aesthetic, negative tracking typography, frosted glass sub-navigation, and a comprehensive light/dark mode toggle.
+🌟 Preview
 
----
+Add your project banner here (Optional)
 
-## 🌐 Live Production Links & Credentials
+![Banner](assets/banner.png)
+🛠️ Built With
+<p align="left"> <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white" /> <img src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white" /> <img src="https://img.shields.io/badge/TailwindCSS-v4-38BDF8?logo=tailwindcss&logoColor=white" /> <img src="https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-Supabase-3FCF8E?logo=supabase&logoColor=white" /> <img src="https://img.shields.io/badge/JWT-Authentication-orange" /> <img src="https://img.shields.io/badge/License-MIT-blue" /> </p>
+🌐 Live Demo
+🖥️ Frontend
 
-| Resource | Live Production URL |
-|---|---|
-| 🖥️ **Live Web Application (Frontend)** | [https://task-manager-app-d1kg.vercel.app/](https://task-manager-app-d1kg.vercel.app/) |
-| ⚡ **Live Backend API** | [https://task-manager-app-ashy-rho.vercel.app/](https://task-manager-app-ashy-rho.vercel.app/) |
-| 🗄️ **Database** | PostgreSQL (Hosted on **Supabase**) |
+https://task-manager-app-d1kg.vercel.app/
 
-### 🔐 Default Assessment Credentials
+⚡ Backend API
 
-| Email | Password | Role |
-|---|---|---|
-| `admin@test.com` | `123456` | Admin / User |
+https://task-manager-app-ashy-rho.vercel.app/
 
----
+🗄️ Database
 
-## ✨ Features & Highlights
+Supabase PostgreSQL
 
-- **🍎 Apple Design System Integration**:
-  - Implementation of Apple's signature clean, low-density layout.
-  - Strict adherence to SF Pro system fonts with negative tracking.
-  - Custom CSS properties defining a robust color and sizing system (`apple-canvas`, `apple-divider`, `apple-pill`, `apple-primary`).
-  - Frosted glass effects via `backdrop-filter` for sticky headers.
-- **🌗 Light/Dark Mode Switch**: Smooth theme toggling persisted via `localStorage`, transforming the app seamlessly between crisp light and dark slate.
-- **🔐 User Authentication**: Secure login using JWT (JSON Web Tokens) and `bcryptjs` password hashing with protected route guards.
-- **📊 Analytics & Visualizations**: Interactive Recharts components:
-  - **Task Status Donut Chart**: Distribution across Pending, In Progress, Completed, and Overdue statuses.
-  - **Priority Bar Chart**: Breakdown across Low, Medium, and High task priorities.
-  - **Show/Hide Analytics Toggle**: Sleek button to toggle chart visibility on demand.
-- **⚡ Overview Statistics Cards**: 5 metric cards (Total, Pending, In Progress, Completed, Overdue).
-- **📝 Complete Task Management (CRUD)**: Create, Read, Update, and Delete tasks with custom confirmation modals and toast notifications.
-- **🔍 Search, Filter & Sort**:
-  - Live title search bar.
-  - Dropdown filters for Status and Priority.
-  - Sorting by Newest Created, Oldest Created, and Due Date.
+🔑 Demo Login
+Email	Password
+admin@test.com	123456
+📸 Screenshots
+🔐 Login Page
+Desktop View	Mobile View
 
----
+	
+📊 Dashboard
+Desktop View	Mobile View
 
-## 🛠️ Technology Stack
-
-| Layer | Technologies Used |
-|---|---|
-| **Frontend** | React 18 (Vite), Tailwind CSS v4, Recharts, Lucide Icons, React Hot Toast, Axios |
-| **Backend** | Node.js, Express.js, JWT (`jsonwebtoken`), `bcryptjs`, CORS, `pg` (Node Postgres Pool) |
-| **Database** | PostgreSQL (Supabase Hosted PostgreSQL) |
-| **Deployment** | Vercel (Frontend & Serverless Backend) |
-
----
-
-## 📁 Project Structure
-
-```
+	
+✨ Features
+🔐 Authentication
+Secure JWT Authentication
+Password Encryption using bcryptjs
+Protected Routes
+Persistent User Session
+📝 Task Management
+Create Tasks
+View Tasks
+Edit Tasks
+Delete Tasks
+Confirmation Modal
+Toast Notifications
+📊 Dashboard Analytics
+Overview Statistics
+Total Tasks
+Pending Tasks
+In Progress Tasks
+Completed Tasks
+Overdue Tasks
+📈 Charts
+Task Status Donut Chart
+Priority Bar Chart
+Toggle Analytics Section
+🔍 Search & Filter
+Live Search by Task Title
+Filter by Status
+Filter by Priority
+Sort by Newest
+Sort by Oldest
+Sort by Due Date
+🎨 UI/UX
+Apple Inspired Design System
+Light Mode
+Dark Mode
+Frosted Glass Navigation
+Fully Responsive
+Mobile Friendly
+Desktop Optimized
+🛠 Technology Stack
+Layer	Technologies
+Frontend	React 18, Vite, Tailwind CSS v4
+UI	Lucide Icons, React Hot Toast
+Charts	Recharts
+HTTP Client	Axios
+Backend	Node.js, Express.js
+Authentication	JWT, bcryptjs
+Database	PostgreSQL
+Cloud Database	Supabase
+Deployment	Vercel
+📂 Project Structure
 task-manager-app/
+│
 ├── backend/
-│   ├── config/          # PostgreSQL Database Pool setup & IPv4 pooler logic
-│   ├── controllers/     # Auth and Task controller business logic
-│   ├── middleware/      # JWT verification middleware
-│   ├── routes/          # Auth & Task REST API routes
-│   ├── vercel.json      # Standalone Vercel deployment config for backend
-│   ├── .env.example     # Backend environment template
-│   ├── server.js        # Express server entry point
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── routes/
+│   ├── server.js
+│   ├── vercel.json
 │   └── package.json
+│
 ├── frontend/
 │   ├── src/
-│   │   ├── components/  # Login, Dashboard & TaskModal React components
-│   │   ├── context/     # AuthContext state manager & user session persistence
-│   │   ├── services/    # Axios instance & token interceptors
-│   │   ├── App.jsx      # Auth guard & toaster wrapper
-│   │   └── index.css    # Tailwind CSS rules & Apple theme styling
-│   ├── tailwind.config.js # Apple design tokens mapped to Tailwind
-│   ├── vercel.json      # Standalone Vercel deployment config for frontend
-│   ├── package.json
-│   └── vite.config.js
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   └── index.css
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   ├── vercel.json
+│   └── package.json
+│
 ├── database/
-│   └── schema.sql       # PostgreSQL table schemas & initial seed migration
-├── .gitignore
-└── README.md            # Project documentation & assessment guide
-```
+│   └── schema.sql
+│
+├── assets/
+│   ├── login-desktop.png
+│   ├── login-mobile.png
+│   ├── dashboard-desktop.png
+│   └── dashboard-mobile.png
+│
+└── README.md
+🚀 Getting Started
+Prerequisites
+Node.js (18 or later)
+PostgreSQL or Supabase
+npm
+Clone Repository
+git clone https://github.com/your-username/task-manager-app.git
 
----
-
-## 🚀 Quick Start & Local Setup
-
-### Prerequisites
-- Node.js (v18+ recommended)
-- PostgreSQL database or Supabase account
-
----
-
-### 1. Database Migration
-Run the SQL script located at `database/schema.sql` in your **Supabase SQL Editor** or local PostgreSQL instance:
-
-```sql
--- Creates 'users' and 'tasks' tables and seeds default user:
--- Email: admin@test.com
--- Password: 123456
-```
-
----
-
-### 2. Backend Setup
-
-```bash
+cd task-manager-app
+Backend Setup
 cd backend
-npm install
-```
 
-Create a `.env` file inside `backend/`:
-```env
+npm install
+
+Create a .env file.
+
 PORT=5000
-DATABASE_URL=postgresql://postgres.ektqllxwrrnxqdhtuywj:WuJ037hazfXJSvcj@aws-0-ap-southeast-2.pooler.supabase.com:6543/postgres
-JWT_SECRET=super_secret_jwt_key_2026
-```
 
-Start the backend server:
-```bash
+DATABASE_URL=YOUR_DATABASE_URL
+
+JWT_SECRET=YOUR_SECRET_KEY
+
+Run Backend
+
 npm run dev
-# Backend running at http://localhost:5000
-```
 
----
+Backend
 
-### 3. Frontend Setup
-
-```bash
+http://localhost:5000
+Frontend Setup
 cd frontend
+
 npm install
-```
 
-Create a `.env` file inside `frontend/` (optional for local dev):
-```env
+Create .env
+
 VITE_API_BASE_URL=http://localhost:5000/api
-```
 
-Start the frontend development server:
-```bash
+Run Frontend
+
 npm run dev
-# Frontend running at http://localhost:5173
-```
 
----
+Frontend
 
-## 📡 API Documentation
+http://localhost:5173
+📡 API Endpoints
+Authentication
+Method	Endpoint	Description
+POST	/api/auth/login	Login User
+Tasks
+Method	Endpoint	Description
+GET	/api/tasks	Get All Tasks
+GET	/api/tasks/stats	Dashboard Statistics
+GET	/api/tasks/:id	Get Single Task
+POST	/api/tasks	Create Task
+PUT	/api/tasks/:id	Update Task
+DELETE	/api/tasks/:id	Delete Task
+💡 Design Decisions
+Apple-inspired clean interface with a minimal and modern layout.
+JWT authentication ensures secure access to protected resources.
+Tasks are isolated per authenticated user.
+Overdue tasks are calculated dynamically based on the due date.
+Responsive design optimized for both desktop and mobile devices.
+Theme preference is stored using Local Storage for a seamless experience.
+📅 Future Improvements
+Drag & Drop Task Board
+Calendar View
+Team Collaboration
+Email Notifications
+File Attachments
+Activity Logs
+User Profile Management
+Export Tasks to PDF/Excel
+👨‍💻 Author
 
-### Authentication Endpoints
-| Method | Endpoint | Description | Request Body / Headers |
-|---|---|---|---|
-| `POST` | `/api/auth/login` | Authenticate user & return signed JWT token | `{ "email": "admin@test.com", "password": "123456" }` |
+Ishara Madhushankha
 
-### Task Endpoints (Requires `Authorization: Bearer <JWT_TOKEN>`)
-| Method | Endpoint | Description | Query Parameters / Body |
-|---|---|---|---|
-| `GET` | `/api/tasks/stats` | Fetch overview metric counts | None |
-| `GET` | `/api/tasks` | Fetch tasks with search, filter & sort | `?search=title&status=Pending&priority=High&sort=newest\|oldest\|due_date` |
-| `POST` | `/api/tasks` | Create a new task | `{ "title": "...", "priority": "High", "due_date": "YYYY-MM-DD", "status": "Pending", "description": "..." }` |
-| `GET` | `/api/tasks/:id` | Fetch single task by ID | None |
-| `PUT` | `/api/tasks/:id` | Update task by ID | `{ "status": "Completed" }` |
-| `DELETE` | `/api/tasks/:id` | Delete task by ID | None |
+Software Engineering Graduate
 
----
+📧 Email: your-email@example.com
 
-## 💡 Key Design & Business Decisions
+🔗 LinkedIn: https://linkedin.com/in/your-profile
 
-1. **Apple Design Language**: The UI was updated to rigorously match Apple's modern web aesthetic. This ensures high visual quality while keeping information density balanced and interactions smooth.
-2. **User Scope & Data Isolation**: Tasks are associated with `user_id` foreign keys to ensure data isolation.
-3. **Dynamic Overdue Calculation**: Tasks are evaluated as overdue dynamically when `due_date < CURRENT_DATE` and `status != 'Completed'`.
-4. **Date Validation**: Due dates cannot be set prior to today's date during creation or editing.
-5. **Vercel IPv4 Pooler Integration**: The backend automatically routes database queries through Supabase's IPv4 connection pooler to ensure zero network latency and 100% serverless connection uptime.
+💻 GitHub: https://github.com/your-username
 
----
+📄 License
 
-## 📄 License
+This project was developed as part of the Koncepthive Technical Assessment.
 
-Built for **Koncepthive Technical Assessment** by Ishara Madhushankha. MIT License.
+Licensed under the MIT License.
+
+⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ Star on GitHub. It helps others discover the project and supports future development.
