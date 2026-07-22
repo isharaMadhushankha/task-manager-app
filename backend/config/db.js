@@ -1,9 +1,10 @@
 const { Pool } = require('pg');
 require('dotenv').config();
 
+// Use IPv4-compatible Supabase connection pooler URL for Vercel Serverless environment
 const connectionString =
   process.env.DATABASE_URL ||
-  'postgresql://postgres:WuJ037hazfXJSvcj@db.ektqllxwrrnxqdhtuywj.supabase.co:5432/postgres';
+  'postgresql://postgres.ektqllxwrrnxqdhtuywj:WuJ037hazfXJSvcj@aws-0-ap-southeast-2.pooler.supabase.com:6543/postgres';
 
 // Create a connection pool using the DATABASE_URL
 const pool = new Pool({
