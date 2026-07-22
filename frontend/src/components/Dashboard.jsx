@@ -35,7 +35,6 @@ import {
   BarChart3,
   Eye,
   EyeOff,
-  Sparkles,
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -278,9 +277,8 @@ const Dashboard = () => {
               <CheckSquare className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="font-bold text-lg text-white leading-tight flex items-center gap-2">
+              <h1 className="font-bold text-lg text-white leading-tight">
                 Task Manager
-                <Sparkles className="w-4 h-4 text-indigo-400" />
               </h1>
               <p className="text-xs text-slate-400">Dashboard</p>
             </div>
@@ -303,7 +301,7 @@ const Dashboard = () => {
 
       {/* Main Container */}
       <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
-        {/* Statistics Cards (Fixed 5-Column Grid Across All Screen Sizes) */}
+        {/* Statistics Cards (Mobile Optimized for Full Text Visibility, Desktop Untouched) */}
         <section className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
@@ -328,74 +326,74 @@ const Dashboard = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-5 gap-1.5 sm:gap-4">
+          <div className="grid grid-cols-5 gap-1 sm:gap-4">
             {/* Total Tasks Card */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-indigo-500/30 hover:border-indigo-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-5 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.12)] hover:shadow-[0_0_25px_rgba(99,102,241,0.25)] group">
+            <div className="relative overflow-hidden bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-indigo-500/30 hover:border-indigo-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.12)] hover:shadow-[0_0_25px_rgba(99,102,241,0.25)] group">
               <div className="absolute top-0 left-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-indigo-500 to-purple-500" />
               <div className="flex items-center justify-between text-slate-400 gap-1">
-                <span className="text-[8px] sm:text-xs font-semibold uppercase tracking-wider truncate">Total</span>
-                <div className="w-5 h-5 sm:w-8 sm:h-8 p-0.5 sm:p-1.5 bg-indigo-500/10 text-indigo-400 rounded-md sm:rounded-xl border border-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <ListTodo className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-[9px] sm:text-xs font-semibold uppercase tracking-wider leading-tight text-slate-300">Total Tasks</span>
+                <div className="hidden sm:flex w-8 h-8 p-1.5 bg-indigo-500/10 text-indigo-400 rounded-xl border border-indigo-500/20 items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <ListTodo className="w-4 h-4" />
                 </div>
               </div>
-              <div className="mt-1.5 sm:mt-4">
-                <span className="text-xs sm:text-2xl font-bold text-white tracking-tight">{stats.total}</span>
+              <div className="mt-1 sm:mt-4">
+                <span className="text-sm sm:text-2xl font-bold text-white tracking-tight">{stats.total}</span>
               </div>
             </div>
 
             {/* Pending Tasks Card */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 border border-amber-500/30 hover:border-amber-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-5 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.12)] hover:shadow-[0_0_25px_rgba(245,158,11,0.25)] group">
+            <div className="relative overflow-hidden bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 border border-amber-500/30 hover:border-amber-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.12)] hover:shadow-[0_0_25px_rgba(245,158,11,0.25)] group">
               <div className="absolute top-0 left-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-amber-400 to-orange-500" />
               <div className="flex items-center justify-between text-slate-400 gap-1">
-                <span className="text-[8px] sm:text-xs font-semibold uppercase tracking-wider truncate">Pending</span>
-                <div className="w-5 h-5 sm:w-8 sm:h-8 p-0.5 sm:p-1.5 bg-amber-500/10 text-amber-400 rounded-md sm:rounded-xl border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-[9px] sm:text-xs font-semibold uppercase tracking-wider leading-tight text-slate-300">Pending</span>
+                <div className="hidden sm:flex w-8 h-8 p-1.5 bg-amber-500/10 text-amber-400 rounded-xl border border-amber-500/20 items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Clock className="w-4 h-4" />
                 </div>
               </div>
-              <div className="mt-1.5 sm:mt-4">
-                <span className="text-xs sm:text-2xl font-bold text-amber-400 tracking-tight">{stats.pending}</span>
+              <div className="mt-1 sm:mt-4">
+                <span className="text-sm sm:text-2xl font-bold text-amber-400 tracking-tight">{stats.pending}</span>
               </div>
             </div>
 
             {/* In Progress Tasks Card */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-blue-950/40 via-slate-900 to-slate-900 border border-blue-500/30 hover:border-blue-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-5 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.12)] hover:shadow-[0_0_25px_rgba(59,130,246,0.25)] group">
+            <div className="relative overflow-hidden bg-gradient-to-r from-blue-950/40 via-slate-900 to-slate-900 border border-blue-500/30 hover:border-blue-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.12)] hover:shadow-[0_0_25px_rgba(59,130,246,0.25)] group">
               <div className="absolute top-0 left-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-blue-400 to-cyan-500" />
               <div className="flex items-center justify-between text-slate-400 gap-1">
-                <span className="text-[8px] sm:text-xs font-semibold uppercase tracking-wider truncate">Progress</span>
-                <div className="w-5 h-5 sm:w-8 sm:h-8 p-0.5 sm:p-1.5 bg-blue-500/10 text-blue-400 rounded-md sm:rounded-xl border border-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <Loader2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-[9px] sm:text-xs font-semibold uppercase tracking-wider leading-tight text-slate-300">In Progress</span>
+                <div className="hidden sm:flex w-8 h-8 p-1.5 bg-blue-500/10 text-blue-400 rounded-xl border border-blue-500/20 items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Loader2 className="w-4 h-4" />
                 </div>
               </div>
-              <div className="mt-1.5 sm:mt-4">
-                <span className="text-xs sm:text-2xl font-bold text-blue-400 tracking-tight">{stats.inProgress}</span>
+              <div className="mt-1 sm:mt-4">
+                <span className="text-sm sm:text-2xl font-bold text-blue-400 tracking-tight">{stats.inProgress}</span>
               </div>
             </div>
 
             {/* Completed Tasks Card */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 border border-emerald-500/30 hover:border-emerald-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-5 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.12)] hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] group">
+            <div className="relative overflow-hidden bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 border border-emerald-500/30 hover:border-emerald-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.12)] hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] group">
               <div className="absolute top-0 left-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-emerald-400 to-teal-500" />
               <div className="flex items-center justify-between text-slate-400 gap-1">
-                <span className="text-[8px] sm:text-xs font-semibold uppercase tracking-wider truncate">Done</span>
-                <div className="w-5 h-5 sm:w-8 sm:h-8 p-0.5 sm:p-1.5 bg-emerald-500/10 text-emerald-400 rounded-md sm:rounded-xl border border-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-[9px] sm:text-xs font-semibold uppercase tracking-wider leading-tight text-slate-300">Completed</span>
+                <div className="hidden sm:flex w-8 h-8 p-1.5 bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/20 items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <CheckCircle2 className="w-4 h-4" />
                 </div>
               </div>
-              <div className="mt-1.5 sm:mt-4">
-                <span className="text-xs sm:text-2xl font-bold text-emerald-400 tracking-tight">{stats.completed}</span>
+              <div className="mt-1 sm:mt-4">
+                <span className="text-sm sm:text-2xl font-bold text-emerald-400 tracking-tight">{stats.completed}</span>
               </div>
             </div>
 
             {/* Overdue Tasks Card */}
-            <div className="relative overflow-hidden bg-gradient-to-r from-rose-950/40 via-slate-900 to-slate-900 border border-rose-500/30 hover:border-rose-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-5 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(239,68,68,0.12)] hover:shadow-[0_0_25px_rgba(239,68,68,0.25)] group">
+            <div className="relative overflow-hidden bg-gradient-to-r from-rose-950/40 via-slate-900 to-slate-900 border border-rose-500/30 hover:border-rose-500/60 rounded-xl sm:rounded-2xl p-1.5 sm:p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(239,68,68,0.12)] hover:shadow-[0_0_25px_rgba(239,68,68,0.25)] group">
               <div className="absolute top-0 left-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-rose-500 to-red-600" />
               <div className="flex items-center justify-between text-slate-400 gap-1">
-                <span className="text-[8px] sm:text-xs font-semibold uppercase tracking-wider truncate">Overdue</span>
-                <div className="w-5 h-5 sm:w-8 sm:h-8 p-0.5 sm:p-1.5 bg-rose-500/10 text-rose-400 rounded-md sm:rounded-xl border border-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-[9px] sm:text-xs font-semibold uppercase tracking-wider leading-tight text-slate-300">Overdue</span>
+                <div className="hidden sm:flex w-8 h-8 p-1.5 bg-rose-500/10 text-rose-400 rounded-xl border border-rose-500/20 items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <AlertTriangle className="w-4 h-4" />
                 </div>
               </div>
-              <div className="mt-1.5 sm:mt-4">
-                <span className="text-xs sm:text-2xl font-bold text-rose-400 tracking-tight">{stats.overdue}</span>
+              <div className="mt-1 sm:mt-4">
+                <span className="text-sm sm:text-2xl font-bold text-rose-400 tracking-tight">{stats.overdue}</span>
               </div>
             </div>
           </div>
