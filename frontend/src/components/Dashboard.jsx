@@ -35,6 +35,7 @@ import {
   BarChart3,
   Eye,
   EyeOff,
+  Sparkles,
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -262,27 +263,36 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pb-12">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pb-16 selection:bg-indigo-500 selection:text-white">
+      {/* Background Decorative Blur Orbs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-1/4 left-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
+      </div>
+
       {/* ── Navbar ───────────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-20 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+      <header className="sticky top-0 z-30 bg-slate-900/80 backdrop-blur-xl border-b border-slate-800/80 shadow-lg shadow-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-indigo-600/20 text-indigo-400 rounded-xl border border-indigo-500/30">
+            <div className="p-2 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 text-indigo-400 rounded-xl border border-indigo-500/30 shadow-inner">
               <CheckSquare className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="font-bold text-lg text-white leading-tight">Task Manager</h1>
+              <h1 className="font-bold text-lg text-white leading-tight flex items-center gap-2">
+                Task Manager
+                <Sparkles className="w-4 h-4 text-indigo-400" />
+              </h1>
               <p className="text-xs text-slate-400">Dashboard</p>
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-block text-sm text-slate-300 font-medium bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+            <span className="hidden sm:inline-block text-sm text-slate-300 font-medium bg-slate-800/90 px-3.5 py-1.5 rounded-xl border border-slate-700/80 shadow-sm">
               {user?.email || 'admin@test.com'}
             </span>
             <button
               onClick={logout}
-              className="flex items-center gap-2 text-sm text-slate-400 hover:text-red-400 bg-slate-800 hover:bg-red-500/10 border border-slate-700 hover:border-red-500/30 px-3 py-1.5 rounded-lg transition-all cursor-pointer"
+              className="flex items-center gap-2 text-sm text-slate-400 hover:text-rose-400 bg-slate-800/90 hover:bg-rose-500/10 border border-slate-700/80 hover:border-rose-500/30 px-3.5 py-1.5 rounded-xl transition-all cursor-pointer shadow-sm"
             >
               <LogOut className="w-4 h-4" />
               <span>Logout</span>
@@ -292,17 +302,17 @@ const Dashboard = () => {
       </header>
 
       {/* ── Main Container ─────────────────────────────────────────────────── */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
-        {/* ── Dashboard Metric Cards ───────────────────────────────────────── */}
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
+        {/* ── Enhanced Statistics Cards with Subtle Left Gradient Glow ─────────── */}
         <section className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
               Overview Statistics
             </h2>
-            {/* Show/Hide Analytics Toggle Button */}
+            {/* Analytics Toggle Button */}
             <button
               onClick={() => setShowCharts(!showCharts)}
-              className="flex items-center gap-2 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 px-3 py-1.5 rounded-xl transition-all cursor-pointer"
+              className="flex items-center gap-2 text-xs font-semibold bg-slate-800/90 hover:bg-slate-700 text-slate-300 border border-slate-700/80 px-3.5 py-1.5 rounded-xl transition-all cursor-pointer shadow-sm hover:border-slate-600"
             >
               {showCharts ? (
                 <>
@@ -319,58 +329,73 @@ const Dashboard = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {/* Total */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+            {/* Total Tasks Card */}
+            <div className="relative overflow-hidden bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-indigo-500/30 hover:border-indigo-500/60 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(99,102,241,0.12)] hover:shadow-[0_0_25px_rgba(99,102,241,0.25)] group">
+              <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-purple-500" />
               <div className="flex items-center justify-between text-slate-400">
-                <span className="text-xs font-semibold uppercase tracking-wider">Total Tasks</span>
-                <ListTodo className="w-5 h-5 text-indigo-400" />
+                <span className="text-xs font-bold uppercase tracking-wider">Total Tasks</span>
+                <div className="p-2 bg-indigo-500/10 text-indigo-400 rounded-xl border border-indigo-500/20 group-hover:scale-110 transition-transform">
+                  <ListTodo className="w-5 h-5" />
+                </div>
               </div>
-              <div className="mt-3">
-                <span className="text-3xl font-extrabold text-white">{stats.total}</span>
+              <div className="mt-4">
+                <span className="text-3xl font-extrabold text-white tracking-tight">{stats.total}</span>
               </div>
             </div>
 
-            {/* Pending */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+            {/* Pending Tasks Card */}
+            <div className="relative overflow-hidden bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 border border-amber-500/30 hover:border-amber-500/60 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.12)] hover:shadow-[0_0_25px_rgba(245,158,11,0.25)] group">
+              <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 to-orange-500" />
               <div className="flex items-center justify-between text-slate-400">
-                <span className="text-xs font-semibold uppercase tracking-wider">Pending</span>
-                <Clock className="w-5 h-5 text-amber-400" />
+                <span className="text-xs font-bold uppercase tracking-wider">Pending</span>
+                <div className="p-2 bg-amber-500/10 text-amber-400 rounded-xl border border-amber-500/20 group-hover:scale-110 transition-transform">
+                  <Clock className="w-5 h-5" />
+                </div>
               </div>
-              <div className="mt-3">
-                <span className="text-3xl font-extrabold text-amber-400">{stats.pending}</span>
+              <div className="mt-4">
+                <span className="text-3xl font-extrabold text-amber-400 tracking-tight">{stats.pending}</span>
               </div>
             </div>
 
-            {/* In Progress */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+            {/* In Progress Tasks Card */}
+            <div className="relative overflow-hidden bg-gradient-to-r from-blue-950/40 via-slate-900 to-slate-900 border border-blue-500/30 hover:border-blue-500/60 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.12)] hover:shadow-[0_0_25px_rgba(59,130,246,0.25)] group">
+              <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-cyan-500" />
               <div className="flex items-center justify-between text-slate-400">
-                <span className="text-xs font-semibold uppercase tracking-wider">In Progress</span>
-                <Loader2 className="w-5 h-5 text-blue-400" />
+                <span className="text-xs font-bold uppercase tracking-wider">In Progress</span>
+                <div className="p-2 bg-blue-500/10 text-blue-400 rounded-xl border border-blue-500/20 group-hover:scale-110 transition-transform">
+                  <Loader2 className="w-5 h-5" />
+                </div>
               </div>
-              <div className="mt-3">
-                <span className="text-3xl font-extrabold text-blue-400">{stats.inProgress}</span>
+              <div className="mt-4">
+                <span className="text-3xl font-extrabold text-blue-400 tracking-tight">{stats.inProgress}</span>
               </div>
             </div>
 
-            {/* Completed */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all">
+            {/* Completed Tasks Card */}
+            <div className="relative overflow-hidden bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 border border-emerald-500/30 hover:border-emerald-500/60 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.12)] hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] group">
+              <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-teal-500" />
               <div className="flex items-center justify-between text-slate-400">
-                <span className="text-xs font-semibold uppercase tracking-wider">Completed</span>
-                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                <span className="text-xs font-bold uppercase tracking-wider">Completed</span>
+                <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
               </div>
-              <div className="mt-3">
-                <span className="text-3xl font-extrabold text-emerald-400">{stats.completed}</span>
+              <div className="mt-4">
+                <span className="text-3xl font-extrabold text-emerald-400 tracking-tight">{stats.completed}</span>
               </div>
             </div>
 
-            {/* Overdue */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:border-slate-700 transition-all col-span-2 md:col-span-1">
+            {/* Overdue Tasks Card */}
+            <div className="relative overflow-hidden bg-gradient-to-r from-rose-950/40 via-slate-900 to-slate-900 border border-rose-500/30 hover:border-rose-500/60 rounded-2xl p-4 flex flex-col justify-between transition-all duration-300 shadow-[0_0_15px_rgba(239,68,68,0.12)] hover:shadow-[0_0_25px_rgba(239,68,68,0.25)] group col-span-2 md:col-span-1">
+              <div className="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-rose-500 to-red-600" />
               <div className="flex items-center justify-between text-slate-400">
-                <span className="text-xs font-semibold uppercase tracking-wider">Overdue</span>
-                <AlertTriangle className="w-5 h-5 text-rose-400" />
+                <span className="text-xs font-bold uppercase tracking-wider">Overdue</span>
+                <div className="p-2 bg-rose-500/10 text-rose-400 rounded-xl border border-rose-500/20 group-hover:scale-110 transition-transform">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
               </div>
-              <div className="mt-3">
-                <span className="text-3xl font-extrabold text-rose-400">{stats.overdue}</span>
+              <div className="mt-4">
+                <span className="text-3xl font-extrabold text-rose-400 tracking-tight">{stats.overdue}</span>
               </div>
             </div>
           </div>
@@ -380,10 +405,12 @@ const Dashboard = () => {
         {showCharts && (
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-300">
             {/* Donut Chart: Task Status Breakdown */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <PieChartIcon className="w-5 h-5 text-indigo-400" />
-                <h2 className="font-bold text-base text-white">Task Status Breakdown</h2>
+            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-xl shadow-black/20 hover:border-slate-700 transition-all">
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2 bg-indigo-500/10 text-indigo-400 rounded-xl border border-indigo-500/20">
+                  <PieChartIcon className="w-5 h-5" />
+                </div>
+                <h2 className="font-bold text-base text-white tracking-wide">Task Status Breakdown</h2>
               </div>
               <div className="w-full h-64">
                 <ResponsiveContainer width="100%" height="100%">
@@ -407,6 +434,7 @@ const Dashboard = () => {
                         borderColor: '#475569',
                         borderRadius: '12px',
                         color: '#ffffff',
+                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
                       }}
                       itemStyle={{ color: '#ffffff' }}
                     />
@@ -421,10 +449,12 @@ const Dashboard = () => {
             </div>
 
             {/* Bar Chart: Priority Distribution */}
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
-              <div className="flex items-center gap-2 mb-4">
-                <BarChart3 className="w-5 h-5 text-indigo-400" />
-                <h2 className="font-bold text-base text-white">Priority Distribution</h2>
+            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-2xl p-5 flex flex-col justify-between shadow-xl shadow-black/20 hover:border-slate-700 transition-all">
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2 bg-indigo-500/10 text-indigo-400 rounded-xl border border-indigo-500/20">
+                  <BarChart3 className="w-5 h-5" />
+                </div>
+                <h2 className="font-bold text-base text-white tracking-wide">Priority Distribution</h2>
               </div>
               <div className="w-full h-64">
                 <ResponsiveContainer width="100%" height="100%">
@@ -437,6 +467,7 @@ const Dashboard = () => {
                         borderColor: '#475569',
                         borderRadius: '12px',
                         color: '#ffffff',
+                        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
                       }}
                       itemStyle={{ color: '#ffffff' }}
                     />
@@ -449,17 +480,17 @@ const Dashboard = () => {
         )}
 
         {/* ── Controls Bar: Search, Filter, Sort, Add Task ─────────────────── */}
-        <section className="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-4">
+        <section className="bg-slate-900/90 backdrop-blur-md border border-slate-800 rounded-2xl p-4 space-y-4 shadow-xl shadow-black/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Search */}
-            <div className="relative w-full md:w-72">
+            {/* Search Input */}
+            <div className="relative w-full md:w-80">
               <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search tasks by title..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 pl-10 pr-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 pl-10 pr-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all shadow-inner"
               />
               {search && (
                 <button
@@ -474,7 +505,7 @@ const Dashboard = () => {
             {/* Filters & Sorting Controls */}
             <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
               {/* Status Filter */}
-              <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5">
+              <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 shadow-inner">
                 <Filter className="w-3.5 h-3.5 text-slate-400" />
                 <select
                   value={statusFilter}
@@ -489,7 +520,7 @@ const Dashboard = () => {
               </div>
 
               {/* Priority Filter */}
-              <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5">
+              <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 shadow-inner">
                 <Filter className="w-3.5 h-3.5 text-slate-400" />
                 <select
                   value={priorityFilter}
@@ -504,7 +535,7 @@ const Dashboard = () => {
               </div>
 
               {/* Sorting */}
-              <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5">
+              <div className="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 shadow-inner">
                 <ArrowUpDown className="w-3.5 h-3.5 text-slate-400" />
                 <select
                   value={sortBy}
@@ -520,7 +551,7 @@ const Dashboard = () => {
               {/* Add Task Button */}
               <button
                 onClick={() => handleOpenModal()}
-                className="ml-auto bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm py-2 px-4 rounded-xl shadow-lg shadow-indigo-600/30 flex items-center gap-2 transition-all cursor-pointer"
+                className="ml-auto bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-sm py-2 px-4 rounded-xl shadow-lg shadow-indigo-600/30 flex items-center gap-2 transition-all cursor-pointer hover:scale-[1.02]"
               >
                 <Plus className="w-4 h-4" />
                 <span>Create Task</span>
@@ -534,7 +565,7 @@ const Dashboard = () => {
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 text-slate-500">
               <Loader2 className="w-8 h-8 animate-spin text-indigo-500 mb-3" />
-              <p className="text-sm">Loading tasks...</p>
+              <p className="text-sm font-medium">Loading tasks...</p>
             </div>
           ) : tasks.length === 0 ? (
             <div className="bg-slate-900/60 border border-slate-800 border-dashed rounded-2xl p-12 text-center">
@@ -556,17 +587,17 @@ const Dashboard = () => {
               )}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {tasks.map((task) => {
                 const overdue = isOverdue(task.due_date, task.status);
 
                 return (
                   <div
                     key={task.id}
-                    className={`bg-slate-900 border rounded-2xl p-5 flex flex-col justify-between transition-all hover:shadow-xl ${
+                    className={`bg-slate-900/90 backdrop-blur-md border rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${
                       overdue
-                        ? 'border-rose-500/40 bg-rose-950/10'
-                        : 'border-slate-800 hover:border-slate-700'
+                        ? 'border-rose-500/40 bg-rose-950/10 shadow-[0_0_20px_rgba(239,68,68,0.15)]'
+                        : 'border-slate-800/80 hover:border-indigo-500/40 shadow-xl shadow-black/20'
                     }`}
                   >
                     <div>
@@ -575,7 +606,7 @@ const Dashboard = () => {
                         <div className="flex flex-wrap items-center gap-2">
                           {/* Priority Badge */}
                           <span
-                            className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${
+                            className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${
                               task.priority === 'High'
                                 ? 'bg-rose-500/10 text-rose-400 border-rose-500/30'
                                 : task.priority === 'Medium'
@@ -588,7 +619,7 @@ const Dashboard = () => {
 
                           {/* Status Badge */}
                           <span
-                            className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${
+                            className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${
                               task.status === 'Completed'
                                 ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
                                 : task.status === 'In Progress'
@@ -601,7 +632,7 @@ const Dashboard = () => {
 
                           {/* Overdue Badge */}
                           {overdue && (
-                            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-rose-600 text-white flex items-center gap-1">
+                            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-rose-600 text-white flex items-center gap-1 shadow-sm">
                               <AlertCircle className="w-3 h-3" />
                               Overdue
                             </span>
@@ -639,9 +670,9 @@ const Dashboard = () => {
                     </div>
 
                     {/* Footer: Dates */}
-                    <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500 mt-2">
-                      <div className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                    <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 mt-2">
+                      <div className="flex items-center gap-1.5 font-medium">
+                        <Calendar className="w-3.5 h-3.5 text-indigo-400" />
                         <span>Due: {new Date(task.due_date).toLocaleDateString()}</span>
                       </div>
                     </div>
@@ -655,7 +686,7 @@ const Dashboard = () => {
 
       {/* ── Modal Dialog: Create / Edit Task ───────────────────────────────── */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <div className="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 overflow-hidden">
             {/* Modal Header */}
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -770,7 +801,7 @@ const Dashboard = () => {
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2 rounded-xl text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/30 flex items-center gap-2 transition-all disabled:opacity-50 cursor-pointer"
+                  className="px-5 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-600/30 flex items-center gap-2 transition-all disabled:opacity-50 cursor-pointer"
                 >
                   {isSaving ? (
                     <>
@@ -789,7 +820,7 @@ const Dashboard = () => {
 
       {/* ── Modal Dialog: Delete Confirmation ──────────────────────────────── */}
       {deletingTaskId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <div className="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl p-6 text-center">
             <div className="w-12 h-12 bg-rose-500/10 border border-rose-500/20 text-rose-400 rounded-full flex items-center justify-center mx-auto mb-4">
               <AlertTriangle className="w-6 h-6" />
@@ -807,7 +838,7 @@ const Dashboard = () => {
               </button>
               <button
                 onClick={() => handleDeleteTask(deletingTaskId)}
-                className="px-5 py-2 rounded-xl text-sm font-medium text-white bg-rose-600 hover:bg-rose-500 shadow-lg shadow-rose-600/30 transition-all cursor-pointer"
+                className="px-5 py-2 rounded-xl text-sm font-semibold text-white bg-rose-600 hover:bg-rose-500 shadow-lg shadow-rose-600/30 transition-all cursor-pointer"
               >
                 Delete
               </button>
