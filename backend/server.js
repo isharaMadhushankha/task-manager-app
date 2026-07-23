@@ -16,9 +16,9 @@ app.use(express.json());
 // ─── Database Connection Check ─────────────────────────────────────────────────
 pool.query('SELECT NOW()', (err, res) => {
   if (err) {
-    console.error('❌ Database health check failed:', err.message);
+    console.error(' Database health check failed:', err.message);
   } else {
-    console.log('🗄️  Database connected! Current DB time:', res.rows[0].now);
+    console.log('  Database connected! Current DB time:', res.rows[0].now);
   }
 });
 
@@ -28,7 +28,7 @@ app.use('/api/tasks', taskRoutes);
 
 // ─── Root Health Check ─────────────────────────────────────────────────────────
 app.get('/', (req, res) => {
-  res.json({ message: '🚀 Task Manager API is running' });
+  res.json({ message: ' Task Manager API is running' });
 });
 
 // ─── 404 Handler ──────────────────────────────────────────────────────────────
