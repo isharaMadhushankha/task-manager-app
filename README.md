@@ -3,48 +3,7 @@
 A modern **Full-Stack Task Management Application** built for the **Koncepthive Technical Assessment**. This application allows users to securely manage tasks through a clean, responsive, and Apple-inspired interface with authentication, analytics, task management, filtering, search, sorting, and Light/Dark mode support.
 
 ---
-
-## 🌐 Live Demo
-
-| Resource | Link |
-|----------|------|
-| 🖥️ **Live Application** | https://task-manager-app-d1kg.vercel.app/ |
-| ⚡ **Backend API** | https://task-manager-app-ashy-rho.vercel.app/ |
-| 🗄️ **Database** | Supabase PostgreSQL |
-
-### 🔑 Demo Credentials
-
-| Email | Password |
-|--------|----------|
-| **admin@test.com** | **123456** |
-
----
-
-# 📸 Screenshots
-
-## 🔐 Mobile View
-
-<table align="center">
-  <tr>
-    <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Passenger Home"/>
-    </td>
-    <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987"" width="250" alt="Passenger Home"/>
-    </td>
-    <td align="center" width="25%">
-       <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Passenger Home"/>
-    </td>
-    <td align="center" width="25%">
-       <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
-    </td>
-
-  </tr>
-</table>
----
-
-## 📊 Dashboard
-
+## 📊 Desktop View
 
 <table align="center">
   <tr>
@@ -65,8 +24,42 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
   </tr>
 </table>
 
----
+## 🔐 Mobile View
 
+<table align="center">
+  <tr>
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Passenger Home"/>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987"" width="250" alt="Passenger Home"/>
+    </td>
+    <td align="center" width="25%">
+       <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Passenger Home"/>
+    </td>
+    <td align="center" width="25%">
+       <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
+    </td>
+
+  </tr>
+</table>
+
+---
+## 🌐 Live Demo
+
+| Resource | Link |
+|----------|------|
+| 🖥️ **Live Application** | https://task-manager-app-d1kg.vercel.app/ |
+| ⚡ **Backend API** | https://task-manager-app-ashy-rho.vercel.app/ |
+| 🗄️ **Database** | Supabase PostgreSQL |
+
+### 🔑 Demo Credentials
+
+| Email | Password |
+|--------|----------|
+| **admin@test.com** | **123456** |
+
+---
 # ✨ Features
 
 ## 🔐 Authentication
