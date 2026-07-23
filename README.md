@@ -303,9 +303,9 @@ http://localhost:5173
 
 Software Engineering Graduate
 
-**GitHub:** https://github.com/your-username
+**GitHub:** [https://github.com/your-username](https://github.com/isharaMadhushankha)
 
-**LinkedIn:** https://linkedin.com/in/your-profile
+**LinkedIn:** www.linkedin.com/in/madhushankha-ishara
 
 ---
 
