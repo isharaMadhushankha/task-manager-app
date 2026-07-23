@@ -37,7 +37,6 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
     </td>
     <td align="center" width="25%">
        <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
-     
     </td>
 
   </tr>
@@ -51,22 +50,17 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
   <tr>
     <td align="center" width="50%">
       <img src="https://github.com/user-attachments/assets/db89d26b-a525-4e62-8108-b04db32a4420" alt="Dashboard"/>
-     
     </td>
    <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/4dd22877-c7f0-4aeb-a321-3408ce7a73c6" alt="Dashboard"/>
-     
-    </td>
-    
+      <img src="https://github.com/user-attachments/assets/4dd22877-c7f0-4aeb-a321-3408ce7a73c6" alt="Dashboard"/>  
+    </td> 
   </tr>
-
   <tr>
     <td align="center" width="50%">
       <img src="https://github.com/user-attachments/assets/89d0ebb6-8533-4dbb-bda6-33a9c4d770fc" width="550" alt="Analytics"/>
     </td>
     <td align="center" width="50%">
       <img src="https://github.com/user-attachments/assets/bc5085dd-8929-4aeb-91c1-76219d3b0e24" width="550" alt="Analytics"/>
-      
     </td>
   </tr>
 </table>
