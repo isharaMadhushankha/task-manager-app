@@ -1,4 +1,4 @@
-# 🚀 Task Management System
+# Task Management System
 
 A modern **Full-Stack Task Management Application** built for the **Koncepthive Technical Assessment**. This application allows users to securely manage tasks through a clean, responsive, and Apple-inspired interface with authentication, analytics, task management, filtering, search, sorting, and Light/Dark mode support.
 
