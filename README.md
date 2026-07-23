@@ -55,16 +55,16 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
       <img src="https://github.com/user-attachments/assets/7a969a6c-bf1f-4d4d-b019-41601f35daee" alt="Dashboard"/>
       <br><sub><b>1. Dashboard</b></sub>
     </td>
-
     <td align="center" width="33.33%">
-      <img src="https://github.com/user-attachments/assets/0ad9636c-84df-4fcd-b43c-3fb8d535ba66" alt="Task Management"/>
-      <br><sub><b>2. Task Management</b></sub>
+      <img src="https://github.com/user-attachments/assets/7a969a6c-bf1f-4d4d-b019-41601f35daee" alt="Dashboard"/>
+      <br><sub><b>1. Dashboard</b></sub>
+    </td>
+    <td align="center" width="33.33%">
+      <img src="https://github.com/user-attachments/assets/7a969a6c-bf1f-4d4d-b019-41601f35daee" alt="Dashboard"/>
+      <br><sub><b>1. Dashboard</b></sub>
     </td>
 
-    <td align="center" width="33.33%">
-      <img src="https://github.com/user-attachments/assets/07e02e5c-cc40-4f05-93cd-e6bc9151eeb1" width="500" alt="Analytics"/>
-      <br><sub><b>3. Analytics Dashboard</b></sub>
-    </td>
+    
   </tr>
 </table>
 
