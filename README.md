@@ -28,19 +28,16 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
   <tr>
     <td align="center" width="25%">
       <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Passenger Home"/>
-      <br><sub><b>1. Home / Route Search</b></sub>
     </td>
     <td align="center" width="25%">
       <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987"" width="250" alt="Passenger Home"/>
-      <br><sub><b>2. Dynamic Seat Matrix</b></sub>
     </td>
     <td align="center" width="25%">
        <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Passenger Home"/>
-      <br><sub><b>3. Live Location Tracking</b></sub>
     </td>
     <td align="center" width="25%">
        <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
-      <br><sub><b>4. Digital Boarding Pass</b></sub>
+     
     </td>
 
   </tr>
@@ -49,22 +46,28 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
 
 ## 📊 Dashboard
 
+
 <table align="center">
   <tr>
-    <td align="center" width="33.33%">
-      <img src="https://github.com/user-attachments/assets/7a969a6c-bf1f-4d4d-b019-41601f35daee" alt="Dashboard"/>
-      <br><sub><b>1. Dashboard</b></sub>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/db89d26b-a525-4e62-8108-b04db32a4420" alt="Dashboard"/>
+     
     </td>
-    <td align="center" width="33.33%">
-      <img src="https://github.com/user-attachments/assets/7a969a6c-bf1f-4d4d-b019-41601f35daee" alt="Dashboard"/>
-      <br><sub><b>1. Dashboard</b></sub>
+   <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/4dd22877-c7f0-4aeb-a321-3408ce7a73c6" alt="Dashboard"/>
+     
     </td>
-    <td align="center" width="33.33%">
-      <img src="https://github.com/user-attachments/assets/7a969a6c-bf1f-4d4d-b019-41601f35daee" alt="Dashboard"/>
-      <br><sub><b>1. Dashboard</b></sub>
-    </td>
-
     
+  </tr>
+
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/89d0ebb6-8533-4dbb-bda6-33a9c4d770fc" width="550" alt="Analytics"/>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/bc5085dd-8929-4aeb-91c1-76219d3b0e24" width="550" alt="Analytics"/>
+      
+    </td>
   </tr>
 </table>
 
