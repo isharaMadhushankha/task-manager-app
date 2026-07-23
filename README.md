@@ -1,84 +1,90 @@
 # Task Management System
 
-A modern **Full-Stack Task Management Application** built for the **Koncepthive Technical Assessment**. This application allows users to securely manage tasks through a clean, responsive, and Apple-inspired interface with authentication, analytics, task management, filtering, search, sorting, and Light/Dark mode support.
+A modern **Full-Stack Task Management Application** built for the **Koncepthive Technical Assessment**. This application enables users to securely manage tasks through a clean, responsive interface featuring authentication, analytics, task management, filtering, searching, sorting, and Light/Dark mode support.
 
 ---
-## 📊 Desktop View
+
+# Desktop Preview
 
 <table align="center">
   <tr>
     <td align="center" width="50%">
       <img src="https://github.com/user-attachments/assets/db89d26b-a525-4e62-8108-b04db32a4420" alt="Dashboard"/>
     </td>
-   <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/4dd22877-c7f0-4aeb-a321-3408ce7a73c6" alt="Dashboard"/>  
-    </td> 
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/4dd22877-c7f0-4aeb-a321-3408ce7a73c6" alt="Task List"/>
+    </td>
   </tr>
+
   <tr>
     <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/89d0ebb6-8533-4dbb-bda6-33a9c4d770fc" width="550" alt="Analytics"/>
+      <img src="https://github.com/user-attachments/assets/89d0ebb6-8533-4dbb-bda6-33a9c4d770fc" alt="Analytics"/>
     </td>
     <td align="center" width="50%">
-      <img src="https://github.com/user-attachments/assets/bc5085dd-8929-4aeb-91c1-76219d3b0e24" width="550" alt="Analytics"/>
+      <img src="https://github.com/user-attachments/assets/bc5085dd-8929-4aeb-91c1-76219d3b0e24" alt="Dark Mode"/>
     </td>
   </tr>
 </table>
 
-## 🔐 Mobile View
+# Mobile Preview
 
 <table align="center">
   <tr>
     <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Passenger Home"/>
-    </td>
-    <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987"" width="250" alt="Passenger Home"/>
-    </td>
-    <td align="center" width="25%">
-       <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Passenger Home"/>
-    </td>
-    <td align="center" width="25%">
-       <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
+      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Home"/>
     </td>
 
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987" width="250" alt="Task List"/>
+    </td>
+
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Analytics"/>
+    </td>
+
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Profile"/>
+    </td>
   </tr>
 </table>
 
 ---
-## 🌐 Live Demo
+
+# Live Demo
 
 | Resource | Link |
 |----------|------|
-| 🖥️ **Live Application** | https://task-manager-app-d1kg.vercel.app/ |
-| ⚡ **Backend API** | https://task-manager-app-ashy-rho.vercel.app/ |
-| 🗄️ **Database** | Supabase PostgreSQL |
+| Live Application | https://task-manager-app-d1kg.vercel.app/ |
+| Backend API | https://task-manager-app-ashy-rho.vercel.app/ |
+| Database | Supabase PostgreSQL |
 
-### 🔑 Demo Credentials
+## Demo Credentials
 
 | Email | Password |
 |--------|----------|
-| **admin@test.com** | **123456** |
+| admin@test.com | 123456 |
 
 ---
-# ✨ Features
 
-## 🔐 Authentication
+# Features
+
+## Authentication
 
 - Secure JWT Authentication
 - Password Hashing using bcryptjs
 - Protected Routes
-- Persistent Login Session
+- Persistent Login Sessions
 
-## 📝 Task Management
+## Task Management
 
 - Create Tasks
 - View Tasks
 - Update Tasks
 - Delete Tasks
-- Confirmation Dialog
+- Delete Confirmation Dialog
 - Toast Notifications
 
-## 📊 Dashboard Analytics
+## Dashboard
 
 - Total Tasks
 - Pending Tasks
@@ -86,48 +92,48 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
 - Completed Tasks
 - Overdue Tasks
 
-## 📈 Data Visualization
+## Analytics
 
-- Task Status Donut Chart
-- Priority Bar Chart
-- Show / Hide Analytics
+- Task Status Distribution (Donut Chart)
+- Task Priority Distribution (Bar Chart)
+- Toggle Analytics Visibility
 
-## 🔍 Search, Filter & Sort
+## Search, Filter & Sort
 
-- Live Search by Title
+- Live Search by Task Title
 - Filter by Status
 - Filter by Priority
 - Sort by Newest
 - Sort by Oldest
 - Sort by Due Date
 
-## 🎨 User Experience
+## User Experience
 
-- Apple Design System
-- Light / Dark Mode
+- Clean Modern Interface
+- Light & Dark Mode
 - Frosted Glass Navigation
-- Fully Responsive
-- Mobile Friendly
+- Fully Responsive Layout
+- Mobile Optimized
 
 ---
 
-# 🛠️ Technology Stack
+# Technology Stack
 
 | Layer | Technologies |
 |--------|--------------|
-| **Frontend** | React 18, Vite, Tailwind CSS v4 |
-| **UI Libraries** | Lucide React, React Hot Toast |
-| **Charts** | Recharts |
-| **HTTP Client** | Axios |
-| **Backend** | Node.js, Express.js |
-| **Authentication** | JWT, bcryptjs |
-| **Database** | PostgreSQL |
-| **Cloud Database** | Supabase |
-| **Deployment** | Vercel |
+| Frontend | React 18, Vite, Tailwind CSS v4 |
+| UI Libraries | Lucide React, React Hot Toast |
+| Charts | Recharts |
+| HTTP Client | Axios |
+| Backend | Node.js, Express.js |
+| Authentication | JWT, bcryptjs |
+| Database | PostgreSQL |
+| Cloud Database | Supabase |
+| Deployment | Vercel |
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```text
 task-manager-app/
@@ -166,7 +172,7 @@ task-manager-app/
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 ## Prerequisites
 
@@ -176,7 +182,7 @@ task-manager-app/
 
 ---
 
-## Clone Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/task-manager-app.git
@@ -194,7 +200,7 @@ cd backend
 npm install
 ```
 
-Create a `.env` file inside the **backend** folder.
+Create a `.env` file inside the **backend** directory.
 
 ```env
 PORT=5000
@@ -226,7 +232,7 @@ cd frontend
 npm install
 ```
 
-Create a `.env` file inside the **frontend** folder.
+Create a `.env` file inside the **frontend** directory.
 
 ```env
 VITE_API_BASE_URL=http://localhost:5000/api
@@ -246,72 +252,71 @@ http://localhost:5173
 
 ---
 
-# 📡 API Documentation
+# API Endpoints
 
 ## Authentication
 
 | Method | Endpoint | Description |
-|----------|----------|-------------|
-| POST | `/api/auth/login` | Login User |
-
----
+|--------|----------|-------------|
+| POST | `/api/auth/login` | Authenticate User |
 
 ## Tasks
 
 | Method | Endpoint | Description |
-|----------|----------|-------------|
-| GET | `/api/tasks` | Get All Tasks |
-| GET | `/api/tasks/stats` | Dashboard Statistics |
-| GET | `/api/tasks/:id` | Get Single Task |
-| POST | `/api/tasks` | Create Task |
-| PUT | `/api/tasks/:id` | Update Task |
-| DELETE | `/api/tasks/:id` | Delete Task |
+|--------|----------|-------------|
+| GET | `/api/tasks` | Retrieve All Tasks |
+| GET | `/api/tasks/stats` | Retrieve Dashboard Statistics |
+| GET | `/api/tasks/:id` | Retrieve a Single Task |
+| POST | `/api/tasks` | Create a Task |
+| PUT | `/api/tasks/:id` | Update a Task |
+| DELETE | `/api/tasks/:id` | Delete a Task |
 
 ---
 
-# 💡 Design Decisions
+# Design Decisions
 
-- Apple-inspired design language with a clean and minimal interface.
-- Secure authentication using JWT.
+- Clean and modern UI inspired by Apple's design principles.
+- JWT-based authentication for secure access.
 - User-specific task isolation.
 - Dynamic overdue task calculation.
-- Responsive layout optimized for desktop and mobile devices.
-- Theme preference stored using Local Storage.
+- Responsive design for desktop, tablet, and mobile devices.
+- Theme preference persisted using Local Storage.
 
 ---
 
-# 🚀 Future Improvements
+# Future Enhancements
 
-- Drag & Drop Task Board
+- Drag-and-Drop Kanban Board
 - Calendar View
 - Team Collaboration
 - Email Notifications
 - File Attachments
-- Activity Logs
-- User Profiles
-- Export Tasks to PDF & Excel
+- Activity History
+- User Profile Management
+- Export Tasks to PDF and Excel
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 **Ishara Madhushankha**
 
 Software Engineering Graduate
 
-- 💻 GitHub: https://github.com/your-username
-- 🔗 LinkedIn: https://linkedin.com/in/your-profile
+**GitHub:** https://github.com/your-username
+
+**LinkedIn:** https://linkedin.com/in/your-profile
 
 ---
 
-# 📄 License
+# License
 
-This project was developed for the **Koncepthive Technical Assessment**.
+This project was developed as part of the **Koncepthive Technical Assessment**.
 
 Licensed under the **MIT License**.
 
 ---
 
-## ⭐ Support
+# Support
 
-If you found this project useful, consider giving it a **⭐ Star** on GitHub.
+If you found this project useful, consider starring the repository on GitHub.
