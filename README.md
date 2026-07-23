@@ -26,27 +26,27 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
   </tr>
 </table>
 
-# Mobile Preview
+
+## 🔐 Mobile View
 
 <table align="center">
   <tr>
     <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Home"/>
+      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Passenger Home"/>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987"" width="250" alt="Passenger Home"/>
+    </td>
+    <td align="center" width="25%">
+       <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Passenger Home"/>
+    </td>
+    <td align="center" width="25%">
+       <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
     </td>
 
-    <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987" width="250" alt="Task List"/>
-    </td>
-
-    <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Analytics"/>
-    </td>
-
-    <td align="center" width="25%">
-      <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Profile"/>
-    </td>
   </tr>
 </table>
+
 
 ---
 
