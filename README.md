@@ -22,12 +22,29 @@ A modern **Full-Stack Task Management Application** built for the **Koncepthive 
 
 # 📸 Screenshots
 
-## 🔐 Login Page
+## 🔐 Mobile View
 
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Login Desktop](assets/login-desktop.png) | ![Login Mobile](assets/login-mobile.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/59a9ddd7-3e7c-45ca-a9a3-80f4a20360fc" width="250" alt="Passenger Home"/>
+      <br><sub><b>1. Home / Route Search</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://github.com/user-attachments/assets/cdde99bd-d35c-4a36-bf3a-ebcc52c90987"" width="250" alt="Passenger Home"/>
+      <br><sub><b>2. Dynamic Seat Matrix</b></sub>
+    </td>
+    <td align="center" width="25%">
+       <img src="https://github.com/user-attachments/assets/d8c928fd-1c00-4215-b5ae-c7caad645177" width="250" alt="Passenger Home"/>
+      <br><sub><b>3. Live Location Tracking</b></sub>
+    </td>
+    <td align="center" width="25%">
+       <img src="https://github.com/user-attachments/assets/cfff5682-3e3b-415b-9509-03fe8c973f75" width="250" alt="Passenger Home"/>
+      <br><sub><b>4. Digital Boarding Pass</b></sub>
+    </td>
 
+  </tr>
+</table>
 ---
 
 ## 📊 Dashboard
